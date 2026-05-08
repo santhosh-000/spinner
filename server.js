@@ -6,7 +6,9 @@ const app = express();
 
 // Middleware
 app.use(express.json());
-app.use(cors()); // Frontend fetch request-a allow panna idhu romba mukkiyam
+app.use(cors({
+    origin: "https://inspiring-kitten-6a2eaf.netlify.app/"
+}));
 
 // MongoDB Connection (Local Database)
 mongoose.connect('mongodb+srv://santhoshkumarat2004_db_user:wPGdASnfr9e8LeO0@cluster0.7ul8num.mongodb.net/?appName=Cluster0')
@@ -30,7 +32,7 @@ const UserSchema = new mongoose.Schema({
 });
 const User = mongoose.model('User', UserSchema);
 
-// Admin set panna settings save panna
+// 
 const SettingsSchema = new mongoose.Schema({
     startDate: String,
     morning: { start: String, end: String },
@@ -110,7 +112,7 @@ app.get('/api/settings', async (req, res) => {
 app.post('/api/settings', async (req, res) => {
     try {
         const newSettings = req.body;
-        // Oru record-a mattum update pannu, illana puthusa create pannu
+        //
         await Settings.findOneAndUpdate({}, newSettings, { upsert: true });
         res.json({ message: "Settings updated successfully!" });
     } catch (err) {
