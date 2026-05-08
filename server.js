@@ -6,9 +6,7 @@ const app = express();
 
 // Middleware
 app.use(express.json());
-app.use(cors({
-    origin: "https://inspiring-kitten-6a2eaf.netlify.app/"
-}));
+app.use(cors);
 
 // MongoDB Connection (Local Database)
 mongoose.connect('mongodb+srv://santhoshkumarat2004_db_user:wPGdASnfr9e8LeO0@cluster0.7ul8num.mongodb.net/?appName=Cluster0')
