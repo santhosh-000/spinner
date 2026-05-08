@@ -119,7 +119,12 @@ app.post('/api/settings', async (req, res) => {
 });
 
 // --- SERVER START ---
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
+
+app.get("/", (req, res) => {
+    res.send("Backend is running successfully");
+});
+
 app.listen(PORT, () => {
-    console.log(`🚀 Smart Reach Backend running on http://localhost:${PORT}`);
+    console.log(`🚀 Smart Reach Backend running on port ${PORT}`);
 });
