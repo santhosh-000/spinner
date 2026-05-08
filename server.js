@@ -7,13 +7,15 @@ const app = express();
 // Middleware
 app.use(express.json());
 app.use(cors({
-    origin: "https://spincontest.netlify.app"
+    origin: "*"
 }));
 
 // MongoDB Connection (Local Database)
-mongoose.connect('mongodb+srv://santhoshkumarat2004_db_user:wPGdASnfr9e8LeO0@cluster0.7ul8num.mongodb.net/?appName=Cluster0')
+mongoose.connect('mongodb+srv://santhoshkumarat2004_db_user:wPGdASnfr9e8LeO0@cluster0.7ul8num.mongodb.net/spinnerDB?retryWrites=true&w=majority')
 .then(() => console.log("MongoDB Connected! ✅"))
 .catch(err => console.error("MongoDB Connection Error ❌:", err));
+
+// mongodb+srv://santhoshkumarat2004_db_user:wPGdASnfr9e8LeO0@cluster0.7ul8num.mongodb.net/?appName=Cluster0
 
 // --- SCHEMAS ---
 
