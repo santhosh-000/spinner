@@ -7,7 +7,7 @@ const app = express();
 // Middleware
 app.use(express.json());
 app.use(cors({
-    origin: "https://spincontest.netlify.app/"
+    origin: "https://spincontest.netlify.app"
 }));
 
 // MongoDB Connection (Local Database)
