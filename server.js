@@ -17,7 +17,7 @@ mongoose.connect('mongodb+srv://santhoshkumarat2004_db_user:wPGdASnfr9e8LeO0@clu
 
 // --- SCHEMAS ---
 
-// User details and spin history save panna
+// User details and spin history 
 const UserSchema = new mongoose.Schema({
     name: String,
     mobile: { type: String, unique: true },
